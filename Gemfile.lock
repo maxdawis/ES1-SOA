@@ -69,6 +69,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.5)
     erubis (2.7.0)
     execjs (2.5.2)
     ffi (1.9.8)
@@ -221,6 +222,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  devise-bootstrap-views
   guard-minitest (= 2.3.1)
   jbuilder (~> 2.0)
   jquery-rails
