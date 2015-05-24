@@ -1,0 +1,264 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+/* Navbar */
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(119, 119, 119, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 15px;
+    background-color: rgba(51, 123, 184, 1);
+    background: -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(51, 123, 184, 1) 100%);
+    background: linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(51, 123, 184, 1) 100%);
+    border-width: 1px;
+    border-radius: 15px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(16, 88, 150, 1);
+    background: -webkit-linear-gradient(top, rgba(231, 231, 231, 1) 0%, rgba(16, 88, 150, 1) 100%);
+    background: linear-gradient(to bottom, rgba(231, 231, 231, 1) 0%, rgba(16, 88, 150, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #105896;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #105896;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #105896;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #337bb8;
+}
+
+/* Image Profile */
+
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+// Columns
+
+.users.row {
+    -moz-column-width: 15em;
+    -webkit-column-width: 15em;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+}
+
+@media (min-width: 992px) {
+    .users.row {
+        -moz-column-width: 13.5em;
+        -webkit-column-width: 13.5em;
+    }
+}
+
+
+// users index
+
+.feed {
+    width: 100%;
+    text-align: center;
+}
+
+.panel {
+    display: inline-block;
+    padding:  0;
+    margin:  0 0 10px 0;
+    width:98%;
+    img { width: 100%; }
+}
+
+    // users show
+
+.profile {
+    text-align: center;
+    .avatar { max-width: 100%; }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+.users .panel-body {
+    padding: 0;
+    p {
+        margin: 10px;
+        overflow-x: scroll;
+    }
+   &:hover {
+        background-color: #fcfcfc;
+        box-shadow: 0 0 3px #b7b7b7;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .feed {
+        text-align: center;
+        position: absolute;
+        right: 0;
+        top:53px;
+        bottom:0;
+        border-left: 1px dotted #e4e4e4;
+        width: 63%;
+        overflow-y: scroll;
+        padding-top: 50px;
+    }
+    .profile {text-align: left}
+}
+
+/* Alteration acert css */
+
+/*
+$navbar-default-border: #e5e5e5;
+$navbar-margin-bottom: 50px;
+
+@import "bootstrap";
+*/
+
+.field_with_errors { @extend .has-error; }
+.alert-notice { @extend .alert-info; }
+.alert-alert { @extend .alert-danger; }
+
+.alert {
+   top: 50px;
+   left:0;
+   right: 0;
+   position:absolute;
+}
