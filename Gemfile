@@ -14,6 +14,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'devise'
 # Change => bootstrap devise
 gem 'devise-bootstrap-views'
+# Change => Add paperclip
+gem 'paperclip', '~> 4.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # gem 'uglifier',     '2.5.3'
