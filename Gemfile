@@ -5,17 +5,20 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-# Change => bootstrap sass
+# Change => Bootstrap sass
 gem 'bootstrap-sass', '~> 3.3.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # gem 'sass-rails',   '5.0.2'
 # Change => Devise Autentication
 gem 'devise'
-# Change => bootstrap devise
+# Change => Bootstrap devise
 gem 'devise-bootstrap-views'
 # Change => Add paperclip
 gem 'paperclip', '~> 4.1'
+# Change => Pagination kaminari-bootstrap
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # gem 'uglifier',     '2.5.3'
