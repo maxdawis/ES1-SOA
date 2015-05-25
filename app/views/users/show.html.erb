@@ -1,0 +1,17 @@
+<% provide(:title, "Perfil") %>
+<h1>SOA UFBA</h1>
+
+<div class="row profile">
+    <div class="col-sm-4 col-md-3">
+    	<h1>Meu Dashboard</h1>
+      <%= image_tag(@user.avatar.url(:medium), class: 'avatar') %>
+      <h1><%= @user.full_name %></h1>
+      <ul>
+        <%= content_tag(:li, ("Nome: " + @user.name)) unless @user.name.blank? %>
+      </ul>
+    </div>
+    <div class="feed">
+        <h3>Conectando você com a Ufba</h3>
+        <p>Aqui ficará seu feed de notícias</p>
+    </div>
+</div>

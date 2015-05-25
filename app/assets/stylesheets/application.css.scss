@@ -18,6 +18,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$navbar-default-border: #e5e5e5;
+$navbar-margin-bottom: 50px;
+
+/* Alteration acert css */
+
+.field_with_errors { @extend .has-error; }
+.alert-notice { @extend .alert-info; }
+.alert-alert { @extend .alert-danger; }
+
+.alert {
+   top: 50px;
+   left:0;
+   right: 0;
+   position:absolute;
+}
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -244,22 +260,3 @@ footer {
     .profile {text-align: left}
 }
 
-/* Alteration acert css */
-
-/*
-$navbar-default-border: #e5e5e5;
-$navbar-margin-bottom: 50px;
-
-@import "bootstrap";
-*/
-
-.field_with_errors { @extend .has-error; }
-.alert-notice { @extend .alert-info; }
-.alert-alert { @extend .alert-danger; }
-
-.alert {
-   top: 50px;
-   left:0;
-   right: 0;
-   position:absolute;
-}
