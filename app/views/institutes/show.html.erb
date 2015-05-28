@@ -1,19 +1,20 @@
+<% provide(:title, "#{@institute.name}") %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @institute.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @institute.description %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
+  <strong>Imágem:</strong>
   <%= image_tag @institute.picture.url(:medium) %>
 </p>
 
-<%= link_to 'Edit', edit_institute_path(@institute) %> |
-<%= link_to 'Back', institutes_path %>
+<%= link_to 'Editar', edit_institute_path(@institute) %> |
+<%= link_to 'Voltar', institutes_path %>

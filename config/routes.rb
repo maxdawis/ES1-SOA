@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :departments
   resources :institutes
   devise_for :users
 

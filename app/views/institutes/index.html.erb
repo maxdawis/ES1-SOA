@@ -27,7 +27,7 @@
               <td><%= institute.name %></td>
               <td><%= link_to 'Ver', institute, class:'btn btn-primary btn-xs' %></td>
               <td><%= link_to 'Editar', edit_institute_path(institute), class:'btn btn-primary btn-xs' %></td>
-              <td><%= link_to 'Destroir', institute, method: :delete, data: { confirm: 'Você tem certeza de que deseja destruir este instituto permanentemente?' }, class:'btn btn-primary btn-xs' %></td>
+              <td><%= link_to 'Destruir', institute, method: :delete, data: { confirm: 'Você tem certeza de que deseja destruir este instituto permanentemente?' }, class:'btn btn-primary btn-xs' %></td>
             </tr>
           <% end %>
         </tbody>
