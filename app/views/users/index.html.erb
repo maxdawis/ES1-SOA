@@ -1,17 +1,27 @@
 <% provide(:title, "Usuários") %>
 <div class="container">
-  <div class="users row">
+  <div>
   	<%= paginate(@users) %>
-    <% @users.each do |user| %>
-	    <div class="panel panel-default">
-	      <%= link_to user_path(user) do %>
-	      <div class="panel-body">
-	        <%= image_tag(user.avatar.url(:medium)) %>
-	        <p><%= user.full_name %></p>
-	      </div>
-	      <% end %>
-	    </div>
-    <% end %>
+  	<table class="responsive">
+  		<tbody>
+		    <% @users.each do |user| %>
+		    	<tr>
+		    		<td>
+					    <div class="panel panel-default">
+					      <%= link_to user_path(user) do %>
+					      <div class="panel-body">
+					        <%= image_tag(user.avatar.url(:medium)) %>
+					        <p><%= user.full_name %></p>
+					      </div>
+					      <% end %>
+					    </div>
+					  </td>
+					  <td><%= link_to 'Editar perfil', edit_user_registration_path %></td>
+        		<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				  </tr>
+		    <% end %>
+	  	</tbody>
+	  </table>
     <%= paginate(@users) %>
   </div>
 </div>

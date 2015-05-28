@@ -2,10 +2,9 @@
 <h1>SOA UFBA</h1>
 
 <div class="row profile">
-    <div class="col-sm-4 col-md-3">
-    	<h1>Meu Dashboard</h1>
+    <div class="col-sm-4 col-md-1">
       <%= image_tag(@user.avatar.url(:medium), class: 'avatar') %>
-      <h1><%= @user.full_name %></h1>
+      <h3><%= @user.full_name %></h3>
       <ul>
         <%= content_tag(:li, ("Nome: " + @user.name)) unless @user.name.blank? %>
       </ul>

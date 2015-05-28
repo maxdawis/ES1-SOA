@@ -1,3 +1,7 @@
 <% provide(:title, "Sobre") %>
+
+<li><%= link_to 'Perfil', user_path(current_user), :class => 'navbar-link' %></li>
+
+<li><%= link_to "Usuários", users_path, class: "btn btn-default" %></li>
 <h1>StaticPages#about</h1>
 <p>Find me in app/views/static_pages/about.html.erb</p>

@@ -16,10 +16,9 @@
  */
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
-@import "bootstrap";
-
 $navbar-default-border: #e5e5e5;
 $navbar-margin-bottom: 50px;
+@import "bootstrap";
 
 /* Alteration acert css */
 
