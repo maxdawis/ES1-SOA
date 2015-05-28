@@ -1,0 +1,16 @@
+<% provide(:title, "Editar Instituto") %>
+
+<div class="panel panel-info">
+	<div class="panel-heading text-center">	
+		<h1>Editar Instituto</h1>
+	</div>
+	<div class="panel-body">
+
+		<%= render 'form' %>
+	</div>
+</div>
+
+<div class="well well-sm text-center">
+	<%= link_to 'Ver', @institute, class:'btn btn-primary btn-sm' %> |
+	<%= link_to 'Voltar', institutes_path, class:'btn btn-primary btn-sm' %>
+</div>

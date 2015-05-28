@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
- 
+    has_attached_file :picture
     if @user.save
       redirect_to users_url
     else
