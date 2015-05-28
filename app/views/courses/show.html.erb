@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong>Imágem:</strong>
+  <%= image_tag @course.picture.url(:medium) %>
+</p>
+
+<%= link_to 'Editar', edit_course_path(@course) %> |
+<%= link_to 'Voltar', courses_path %>

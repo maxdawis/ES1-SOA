@@ -1,4 +1,5 @@
 class AddAvatarsToUsers < ActiveRecord::Migration
+  # Upload images
   def self.up
     change_table :users do |t|
       t.attachment :avatar
