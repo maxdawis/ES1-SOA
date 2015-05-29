@@ -1,33 +1,38 @@
+<% provide(:title, "Cursos") %>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Courses</h1>
+<div class="panel panel-default">
+  <div class="panel-heading text-center">
+    <h1>Lista de Cursos</h1><h5><%= @courses.count %> Curso(s)</h5>
+  </div>
+  <div class="panel-body">
+    <%= link_to 'Novo Curso', new_course_path, class:'btn btn-primary btn-lg btn-block' %>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Imágem</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Picture</th>
-      <th>Department</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.name %></td>
-        <td><%= course.description %></td>
-        <td><%= course.picture %></td>
-        <td><%= course.department_id %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Course', new_course_path %>
+        <tbody>
+          <% @courses.each do |course| %>
+            <tr>
+              <td><%= image_tag course.picture.url(:thumb) %></td>
+              <td><%= course.name %></td>
+              <td><%= course.description %></td>
+              <td><%= link_to 'Ver', course, class:'btn btn-primary btn-xs' %></td>
+              <td><%= link_to 'Editar', edit_course_path(course), class:'btn btn-primary btn-xs' %></td>
+              <td><%= link_to 'Destruir', course, method: :delete, data: { confirm: 'Você tem certeza de que deseja destruir este curso permanentemente?' }, class:'btn btn-primary btn-xs' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to 'Novo Curso', new_course_path, class:'btn btn-primary btn-lg btn-block' %>
+    </div>
+  </div>
+</div>
