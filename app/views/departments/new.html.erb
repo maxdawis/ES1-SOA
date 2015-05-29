@@ -1,5 +1,13 @@
-<h1>New Department</h1>
+<% provide(:title, "Criar Departamento") %>
+<div class="panel panel-info">
+	<div class="panel-heading text-center">
+		<h1>Novo Departmento</h1>
+	</div>
+	<div class="panel-body">
 
-<%= render 'form' %>
-
-<%= link_to 'Back', departments_path %>
+		<%= render 'form' %>
+	</div>
+</div>
+<div class="well text-center">
+	<%= link_to 'Voltar', departments_path, class:'btn btn-primary' %>
+</div>
