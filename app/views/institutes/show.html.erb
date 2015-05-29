@@ -1,20 +1,53 @@
 <% provide(:title, "#{@institute.name}") %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @institute.name %>
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">
+    <h4>
+		  <strong><%= @institute.name %></strong>
+		</h4>
+	</div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+    		<tr>
+    			<td rowspan="3">
+    				<%= image_tag @institute.picture.url(:medium) %>
+    			</td>
+    			<td>
+		 				<strong>Descrição:</strong>
+		 		  	<%= @institute.description %>
+		 		  </td>
+		 		</tr>
+		 		<tr>
+		 			<td><%= @institute.created_at.to_s(:created) %></td>
+		 		</tr>
+        <tr>
+          <td><%= @institute.updated_at.to_s(:updated) %></td>
+        </tr>
+      </table>
 
-<p>
-  <strong>Descrição:</strong>
-  <%= @institute.description %>
-</p>
 
-<p>
-  <strong>Imágem:</strong>
-  <%= image_tag @institute.picture.url(:medium) %>
-</p>
+		<p>
+		  <strong>Descrição:</strong>
+		  <%= @institute.description %>
+		</p>
 
-<%= link_to 'Editar', edit_institute_path(@institute) %> |
-<%= link_to 'Voltar', institutes_path %>
+		<p>
+		  <strong>Imágem:</strong>
+		  <%= image_tag @institute.picture.url(:medium) %>
+		</p>
+
+		<h3>Departamentos</h3>
+		<% @departments.each do |department| %>
+		  <div>
+		    <strong><%= comment.user_name %></strong>
+		    <br />
+		    <p><%= comment.body %></p>
+		    <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+		  </div>
+		<% end %>
+		<%= render 'departments/form' %>
+
+		<%= link_to 'Editar', edit_institute_path(@institute) %> |
+		<%= link_to 'Voltar', institutes_path %>

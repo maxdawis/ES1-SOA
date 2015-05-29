@@ -1,4 +1,4 @@
-class AddDataToInstitutes < ActiveRecord::Migration
+class AddPictureToInstitutes < ActiveRecord::Migration
   #def change
   #end
 
