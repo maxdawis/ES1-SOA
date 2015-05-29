@@ -28,7 +28,7 @@ class InstitutesController < ApplicationController
 
     respond_to do |format|
       if @institute.save
-        format.html { redirect_to @institute, notice: 'Institute was successfully created.' }
+        format.html { redirect_to @institute, notice: 'Instituto criado com sucesso.' }
         format.json { render :show, status: :created, location: @institute }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class InstitutesController < ApplicationController
   def update
     respond_to do |format|
       if @institute.update(institute_params)
-        format.html { redirect_to @institute, notice: 'Institute was successfully updated.' }
+        format.html { redirect_to @institute, notice: 'Instituto editado com sucesso.' }
         format.json { render :show, status: :ok, location: @institute }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class InstitutesController < ApplicationController
   def destroy
     @institute.destroy
     respond_to do |format|
-      format.html { redirect_to institutes_url, notice: 'Institute was successfully destroyed.' }
+      format.html { redirect_to institutes_url, notice: 'Instituto destruído com sucesso.' }
       format.json { head :no_content }
     end
   end
