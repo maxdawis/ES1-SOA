@@ -23,6 +23,8 @@
     <%= f.label :picture, "Imágem" %><br>
     <%= f.file_field :picture, autofocus: true, class: "form-control" %>
   </div>
+  <!-- KAY -->
+  <%= f.hidden_field :department_id %>
   <div class="actions form-group">
     <%= f.submit "Criar Curso", class:'btn btn-primary btn-sm' %>
   </div>

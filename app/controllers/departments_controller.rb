@@ -4,12 +4,16 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.json
   def index
+   # @department = Department.new
     @departments = Department.all
   end
 
   # GET /departments/1
   # GET /departments/1.json
   def show
+    # @departments = Department.all
+    #CHANGEEEEEEEE
+    #@department = Department.find(params[:id])
   end
 
   # GET /departments/new
@@ -19,6 +23,8 @@ class DepartmentsController < ApplicationController
 
   # GET /departments/1/edit
   def edit
+    #CHANGEEEEEEEE
+    #@department = Department.find(params[:id])
   end
 
   # POST /departments
@@ -65,10 +71,12 @@ class DepartmentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_department
       @department = Department.find(params[:id])
+      #@courses = @department.courses.all
+      #@course = @department.courses.build
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
-      params.require(:department).permit(:name, :description, :picture)
+      params.require(:department).permit(:name, :description, :picture, :institute_id)
     end
 end

@@ -36,10 +36,10 @@
 
 <div class="panel panel-default">
   <div class="panel-heading text-center">
-    <h1>Departamentos do <a><%= "#{@institute.name}" %></a></h1><h5><%= @departments.count %> Departamento(s)</h5>
+
   </div>
   <div class="panel-body">
-    <%= link_to 'Novo Departamento', new_department_path, class:'btn btn-primary btn-lg btn-block' %>
+    
     <div class="table-responsive">
       <table class="table table-hover">
         <thead>
@@ -58,14 +58,15 @@
               <td><%= department.name %></td>
               <td><%= department.description %></td>
               <td><%= link_to 'Ver', department, class:'btn btn-primary btn-xs' %></td>
-              <td><%= link_to 'Editar', edit_department_path(department), class:'btn btn-primary btn-xs' %></td>
+              
               <td><%= link_to 'Destruir', department, method: :delete, data: { confirm: 'Você tem certeza de que deseja destruir este departamento permanentemente?' }, class:'btn btn-primary btn-xs' %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
       <br>
-      <%= link_to 'Novo Departamento', new_department_path, class:'btn btn-primary btn-lg btn-block' %>
+      
     </div>
   </div>
 </div>
+<%= render 'departments/form' %>

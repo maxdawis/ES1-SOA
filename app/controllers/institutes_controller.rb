@@ -10,6 +10,11 @@ class InstitutesController < ApplicationController
   # GET /institutes/1
   # GET /institutes/1.json
   def show
+   # @institute = Institute.new
+    #@institutes = Institute.all
+    #@institute = institute.find(params[:id])
+    # @departments = Department.all
+    #@department = department.find(params[:id])
   end
 
   # GET /institutes/new

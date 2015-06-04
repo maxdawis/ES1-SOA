@@ -10,6 +10,8 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    #CHANGEEE
+    @Course = Course.find(params[:id])
   end
 
   # GET /courses/new
@@ -19,6 +21,8 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+    #CHANGEEE
+    @Course = Course.find(params[:id])
   end
 
   # POST /courses
