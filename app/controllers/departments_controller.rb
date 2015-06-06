@@ -71,8 +71,8 @@ class DepartmentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_department
       @department = Department.find(params[:id])
-      #@courses = @department.courses.all
-      #@course = @department.courses.build
+      @courses = @department.courses.all
+      @course = @department.courses.build
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

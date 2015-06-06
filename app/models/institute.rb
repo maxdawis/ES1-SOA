@@ -1,5 +1,5 @@
 class Institute < ActiveRecord::Base
-  has_many :departments
+  has_many :departments, dependent: :destroy
 
   has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100#", :small => "150x150>" },
   :default_url => "/images/:style/imgdirectory.png"

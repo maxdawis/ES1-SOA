@@ -1,5 +1,5 @@
 class Department < ActiveRecord::Base
-	
+	has_many :courses, dependent: :destroy
 	belongs_to :institute
 
   has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100#" }, 
