@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title><%= yield(:title) %> | SOA - Sistema de Orientação Acadêmica da Ufba!</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= render 'layouts/shim' %>
-</head>
-<body>
-	<%= render 'layouts/header' %>
-  <div class="container">
-  	<% if notice %>
- 		 	<p class="alert alert-success"><%= notice %></p>
-		<% end %>
-		<% if alert %>
-  		<p class="alert alert-danger"><%= alert %></p>
-		<% end %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+
+    <title><%= yield(:title) %> | SOA - Sistema de Orientação Acadêmica da Ufba!</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+  	<%= render 'layouts/header' %>
+    <div class="container">
+    	<% if notice %>
+   		 	<p class="alert alert-success" role="alert"><%= notice %></p>
+  		<% end %>
+  		<% if alert %>
+    		<p class="alert alert-danger" role="alert"><%= alert %></p>
+  		<% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+    <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
+  </body>
 </html>

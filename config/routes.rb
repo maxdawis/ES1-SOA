@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
   resources :courses
   resources :departments
   resources :institutes
   devise_for :users
+
+  resources :conversations do
+    resources :messages
+  end
 
   resources :users, only: [:index, :show, :create, :destroy]
 

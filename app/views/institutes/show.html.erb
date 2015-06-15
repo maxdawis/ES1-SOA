@@ -36,7 +36,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading text-center">
-
+    <h3>Lista de Departamentos</h3><h5><%= @departments.count %> Departamento(s)</h5>
   </div>
   <div class="panel-body">
     
@@ -58,7 +58,7 @@
               <td><%= department.name %></td>
               <td><%= department.description %></td>
               <td><%= link_to 'Ver', department, class:'btn btn-primary btn-xs' %></td>
-              
+              <td><%= link_to 'Editar', edit_department_path(department), class:'btn btn-primary btn-xs' %></td>
               <td><%= link_to 'Destruir', department, method: :delete, data: { confirm: 'Você tem certeza de que deseja destruir este departamento permanentemente?' }, class:'btn btn-primary btn-xs' %></td>
             </tr>
           <% end %>

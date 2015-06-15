@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
 #  def hello
 #    render text: "SOA UFBA!"
 #  end
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  # before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 

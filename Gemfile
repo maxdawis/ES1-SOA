@@ -19,6 +19,9 @@ gem 'paperclip', '~> 4.1'
 # Change => Pagination kaminari-bootstrap
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+# Change => Gem Private_Pub for CHAT
+gem 'private_pub'
+gem 'thin'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # gem 'uglifier',     '2.5.3'

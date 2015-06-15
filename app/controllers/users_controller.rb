@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:create, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  before_filter :authenticate_user!
 
   def index
     # @users = User.all we will replace this old code - you can delete this line
 
     @users = User.page(params[:page]).per(30)
-    
+    @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+    @conversations = Conversation.involving(current_user).order("created_at DESC")
     # @sent_invites = current_user.sent_invites YOU CAN DELETE THIS LINE
     # @received_invites = current_user.received_invites YOU CAN DELETE THIS LINE
 
