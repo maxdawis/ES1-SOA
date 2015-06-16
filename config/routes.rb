@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   resources :institutes
   devise_for :users
 
+  resources :friendships, only: [:create, :destroy, :accept] do 
+    member do 
+      put :accept
+    end
+  end
+
   resources :conversations do
     resources :messages
   end

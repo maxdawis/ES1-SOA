@@ -1,4 +1,14 @@
 <% provide(:title, "Usuários") %>
+<div class="jumbotron text-center">
+<h2>People</h2>
+<div class="btn-group" role="group" aria-label="Default Button Groups">
+<%= link_to "Everyone", users_path, class: "btn btn-default #{'active' unless params[:people]}" %>
+<%= link_to "Friends (#{@friend_count})", users_path(people: "friends"), class: "btn btn-default #{'active' if params[:people] == 'friends'}" %>
+<%= link_to "Requests (#{request_count})", users_path(people: "requests"), class: "btn btn-default #{'active' if params[:people] == 'requests'}" %>
+<%= link_to "Pending (#{@pending_count})", users_path(people: "pending"), class: "btn btn-default #{'active' if params[:people] == 'pending'}" %>
+</div>
+</div>
+
 <div class="container">
   <div>
   	
@@ -12,6 +22,9 @@
 					      <div class="panel-body">
 					        <%= image_tag(user.avatar.url(:medium)) %>
 					        <p><%= user.full_name %></p>
+                  <% if current_user %>
+                    <p><%= action_buttons(user)%></p>
+                  <% end %>
 					      </div>
 					      <% end %>
 					    </div>

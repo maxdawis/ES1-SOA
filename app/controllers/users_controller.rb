@@ -2,11 +2,14 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:create, :edit, :update, :destroy]
   # before_action :authenticate_user!
   before_filter :authenticate_user!
+  before_action :get_counts, only: [:index]
 
   def index
     # @users = User.all we will replace this old code - you can delete this line
 
+    # PAGINATE
     @users = User.page(params[:page]).per(30)
+    # CHATTY
     @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
     @conversations = Conversation.involving(current_user).order("created_at DESC")
     # @sent_invites = current_user.sent_invites YOU CAN DELETE THIS LINE
@@ -14,6 +17,17 @@ class UsersController < ApplicationController
 
     # @sent_invites = current_user.sent_invites.page(params[:page])
     # @received_invites = current_user.received_invites.page(params[:page])
+
+    # FRIENDSHIP
+    case params[:people] when "friends"
+      @users = current_user.active_friends
+    when "requests"
+      @users = current_user.pending_friend_requests_from.map(&:user)
+    when "pending"
+      @users = current_user.pending_friend_requests_to.map(&:friend)
+    else
+      @users = User.where.not(id: current_user.id)
+    end 
   end
 
   def show
@@ -79,5 +93,11 @@ class UsersController < ApplicationController
     user_params.delete(:password)
     user_params.delete(:password_confirmation)
     user_params
+  end
+
+  # FRIENDSHIP
+  def get_counts
+    @friend_count = current_user.active_friends.size
+    @pending_count = current_user.pending_friend_requests_to.map(&:friend).size
   end
 end

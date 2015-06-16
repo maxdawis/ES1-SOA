@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608011805) do
+ActiveRecord::Schema.define(version: 20150616164905) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 20150608011805) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.string   "state",       default: "pending"
+    t.datetime "friended_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "institutes", force: :cascade do |t|
